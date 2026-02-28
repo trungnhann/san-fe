@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { PostCard } from "@/components/post-card"
-import { ArrowRight, Code, Terminal, Zap, Cpu } from "lucide-react"
+import { ArrowRight, Code, Terminal, Zap, Cpu, Feather, BookOpen, Users } from "lucide-react"
 import Link from "next/link"
 
 const MOCK_POSTS = [
@@ -90,24 +90,24 @@ export default function Home() {
              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 group">
                     <div className="h-12 w-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4 group-hover:scale-110 transition-transform">
-                        <Code className="h-6 w-6" />
+                        <Feather className="h-6 w-6" />
                     </div>
-                    <h3 className="font-semibold text-lg mb-2">Modern Stack</h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm">Exploring the latest frameworks and tools in web development.</p>
+                    <h3 className="font-semibold text-lg mb-2">Authentic Stories</h3>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">Sharing real experiences and the journey behind the code.</p>
                 </div>
                 <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 group">
                     <div className="h-12 w-12 rounded-xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-4 group-hover:scale-110 transition-transform">
-                        <Zap className="h-6 w-6" />
+                        <BookOpen className="h-6 w-6" />
                     </div>
-                    <h3 className="font-semibold text-lg mb-2">Performance</h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm">Optimizing applications for speed, accessibility and SEO.</p>
+                    <h3 className="font-semibold text-lg mb-2">Deep Insights</h3>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">Thoughtful analysis on technology, career, and personal growth.</p>
                 </div>
                 <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 group">
                     <div className="h-12 w-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
-                        <Terminal className="h-6 w-6" />
+                        <Users className="h-6 w-6" />
                     </div>
-                    <h3 className="font-semibold text-lg mb-2">DevOps</h3>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm">Streamlining deployment pipelines and infrastructure.</p>
+                    <h3 className="font-semibold text-lg mb-2">Community First</h3>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">Building a space for connection, discussion, and mutual growth.</p>
                 </div>
              </div>
           </div>

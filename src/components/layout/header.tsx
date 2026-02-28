@@ -22,12 +22,9 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:border-slate-800 dark:bg-slate-950/95 dark:supports-[backdrop-filter]:bg-slate-950/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-8">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 bg-black rounded-full flex items-center justify-center dark:bg-white">
-                <span className="text-white font-bold text-xs dark:text-black">SB</span>
-            </div>
+          <Link href="/" className="flex items-center">
             <span className="hidden font-bold sm:inline-block text-blue-600 text-xl dark:text-blue-500">
-              Sắn
+              SAN
             </span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-400">

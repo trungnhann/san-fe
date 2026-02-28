@@ -203,7 +203,7 @@ export default function AboutPage() {
         </section>
 
         {/* Projects Section */}
-        <section className="py-20">
+        {/* <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center gap-2 text-lg font-semibold text-slate-900 dark:text-white mb-8">
@@ -236,7 +236,7 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       <Footer />
