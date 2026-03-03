@@ -1,9 +1,19 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { PostCard } from "@/components/post-card"
 import { ArrowRight, Code, Terminal, Zap, Cpu, Feather, BookOpen, Users } from "lucide-react"
 import Link from "next/link"
+import { useState, useEffect } from "react"
+
+const HERO_TAGLINES = [
+  "Exploring the future of tech",
+  "Sharing personal stories",
+  "Building a community",
+  "Learning every day"
+]
 
 const MOCK_POSTS = [
   {
@@ -36,6 +46,21 @@ const MOCK_POSTS = [
 ]
 
 export default function Home() {
+  const [taglineIndex, setTaglineIndex] = useState(0)
+  const [isFading, setIsFading] = useState(false)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFading(true)
+      setTimeout(() => {
+        setTaglineIndex((prev) => (prev + 1) % HERO_TAGLINES.length)
+        setIsFading(false)
+      }, 500) // Half of transition duration
+    }, 4000) // Change every 4 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <div className="flex min-h-screen flex-col bg-white dark:bg-black selection:bg-blue-100 selection:text-blue-900 dark:selection:bg-blue-900 dark:selection:text-blue-100">
       <Header />
@@ -46,9 +71,10 @@ export default function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-transparent to-transparent dark:from-blue-900/20 dark:via-transparent dark:to-transparent opacity-70"></div>
           <div className="container relative mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center space-y-8">
-              <div className="inline-flex items-center rounded-full border border-slate-200 bg-white/50 px-3 py-1 text-sm text-slate-600 backdrop-blur-sm dark:border-slate-800 dark:bg-white/5 dark:text-slate-400">
-                <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2 animate-pulse"></span>
-                Exploring the future of tech
+              <div className="inline-flex items-center justify-center min-w-[280px] rounded-full border border-slate-200 bg-white/50 px-4 py-1.5 text-sm text-slate-600 backdrop-blur-sm dark:border-slate-800 dark:bg-white/5 dark:text-slate-400 shadow-sm">
+                <span className={`transition-all duration-500 transform ${isFading ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
+                  {HERO_TAGLINES[taglineIndex]}
+                </span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
